@@ -18,7 +18,7 @@ docker build --build-arg="NPD_TAG=v0.8.14" -t npd-gpu:npd-v0.8.14-cuda-12.3 .
     - [Managed Nodegroup](https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html) or [NodePool](https://karpenter.sh/docs/concepts/nodepools/) with NVIDIA GPU nodes
     - [nvidia-device-plugin](https://github.com/NVIDIA/k8s-device-plugin) or [gpu-operator](https://github.com/NVIDIA/gpu-operator) (recommended)
 * [kubectl](https://kubernetes.io/docs/tasks/tools/)
-* [helm] (https://helm.sh/docs/intro/install/)
+* [helm](https://helm.sh/docs/intro/install/)
 
 ### Deploy the node-problem-detector in EKS Cluster
 
