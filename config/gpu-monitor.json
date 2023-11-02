@@ -1,0 +1,34 @@
+{
+    "plugin": "custom",
+    "pluginConfig": {
+      "invoke_interval": "60s",
+      "timeout": "60s",
+      "max_output_length": 80,
+      "concurrency": 3,
+      "enable_message_change_based_condition_update": false
+    },
+    "source": "ntp-custom-plugin-monitor",
+    "metricsReporting": true,
+    "conditions": [
+      {
+        "type": "GPUProblem",
+        "reason": "GPUsAreUp",
+        "message": "gpus are up"
+      }
+    ],
+    "rules": [
+      {
+        "type": "temporary",
+        "reason": "GPUsAreDown",
+        "path": "/config/plugin/check_gpu.sh",
+        "timeout": "60s"
+      },
+      {
+        "type": "permanent",
+        "condition": "GPUProblem",
+        "reason": "GPUsAreDown",
+        "path": "/config/plugin/check_gpu.sh",
+        "timeout": "60s"
+      }
+    ]
+  }
